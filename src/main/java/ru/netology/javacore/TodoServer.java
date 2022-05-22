@@ -8,14 +8,15 @@ import java.net.Socket;
 import java.util.Scanner;
 
 public class TodoServer {
-    //...
+    protected int port;
+    protected Todos todos;
 
     public TodoServer(int port, Todos todos) {
-        //...
+
     }
 
     public void start() throws IOException {
         System.out.println("Starting server at " + port + "...");
-        //...
+
     }
 }
