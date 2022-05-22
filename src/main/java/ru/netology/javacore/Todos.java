@@ -13,22 +13,23 @@ public class Todos {
     protected List<String> tasks;
 
 
+    static Todos todos = new Todos();
+
     public void addTask(String task) {
-        Todos todo = new Todos();
-        todo.getTasks().add(task);
+        todos.getTasks().add(task);
     }
 
     public void removeTask(String task) {
-     Todos todos = new Todos();
-     for (String todo : todos.tasks) {
-         if (task.equals(todo)){
-             todos.getTasks().remove(task);
-         }
-     }
+        for (String todo : todos.tasks) {
+            if (task.equals(todo)) {
+                todos.getTasks().remove(task);
+            }
+        }
     }
 
     public String getAllTasks() {
-        return  null;
+
+        return null;
     }
 
 }
