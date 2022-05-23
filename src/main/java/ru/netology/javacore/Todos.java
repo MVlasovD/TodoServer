@@ -10,21 +10,19 @@ import java.util.List;
 @Data
 public class Todos {
 
-    protected List<String> tasks;
+    protected String type;
+    protected String task;
 
-
+    static StringBuilder tasks = new StringBuilder();
     static Todos todos = new Todos();
 
     public void addTask(String task) {
-        todos.getTasks().add(task);
+        tasks.append(getTask());
     }
 
     public void removeTask(String task) {
-        for (String todo : todos.tasks) {
-            if (task.equals(todo)) {
-                todos.getTasks().remove(task);
-            }
-        }
+
+
     }
 
     public String getAllTasks() {
