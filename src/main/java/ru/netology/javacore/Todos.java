@@ -2,34 +2,45 @@ package ru.netology.javacore;
 
 import lombok.*;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 
 @AllArgsConstructor
-@NoArgsConstructor
 @Data
 public class Todos {
 
-    protected List<String> tasks;
+    private List<String> tasks;
 
-
-    static Todos todos = new Todos();
+    public Todos() {
+        this.tasks = new ArrayList<>();
+    }
 
     public void addTask(String task) {
-        todos.getTasks().add(task);
+        this.tasks.add(task);
     }
 
     public void removeTask(String task) {
-        for (String todo : todos.tasks) {
-            if (task.equals(todo)) {
-                todos.getTasks().remove(task);
-            }
-        }
+        this.tasks.remove(task);
     }
 
-    public String getAllTasks() {
+    public void setTasks(List<String> tasks) {
+        this.tasks = tasks;
+    }
 
-        return null;
+    public String getTasks() {
+        Collections.sort(this.tasks);
+        StringBuilder sb = new StringBuilder();
+        for (String task : this.tasks) {
+            sb.append(task);
+            sb.append(" ");
+        }
+        return sb.toString();
+    }
+
+    public List<String> getAllTasksAsList() {
+        return this.tasks;
     }
 
 }
