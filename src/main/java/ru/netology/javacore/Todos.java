@@ -1,11 +1,9 @@
 package ru.netology.javacore;
 
 import lombok.*;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
 
 @AllArgsConstructor
 @Data
@@ -42,5 +40,4 @@ public class Todos {
     public List<String> getAllTasksAsList() {
         return this.tasks;
     }
-
 }
